@@ -1,0 +1,37 @@
+.Auth-common {
+  background-color: $indenizou;
+  background-image: url(../images/passport.jpg);
+  background-size: cover;
+  @extend .flex;
+  @extend .column;
+  @extend [align="center center"];
+
+  form {
+    background-color: white;
+    @extend .p2;
+    @extend .column;
+    @extend [align="center center"];
+    @include shadow;
+    padding-top: 0;
+    margin-top: -2rem;
+    border-radius: $radius;
+  }
+
+  input {
+    font-size: 1.15rem;
+    border: 1pt solid $black3;
+    padding: .5rem 1rem;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    border-radius: $radius * 3;
+    outline: none;
+    font-weight: 600;
+  }
+}
+
+.Auth-logo {
+  max-width: 8rem;
+  max-height: 8rem;
+  height: auto;
+  width: 100%;
+}

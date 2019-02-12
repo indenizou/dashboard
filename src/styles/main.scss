@@ -1,0 +1,42 @@
+@import 'styles/vars.scss';
+@import '~flamework';
+@import 'base';
+@import 'Auth';
+
+.currentColor {
+  fill: currentColor;
+}
+
+.button, .button:link, .button:any-link {
+  color: white;
+  border-radius: $radius;
+  font-weight: 600;
+  letter-spacing: unset;
+}
+
+.button.red {
+  background-color: white;
+}
+
+.ReactModal__Content {
+  overflow-y: auto;
+  max-height: 100%;
+  max-height: 85vh;
+  transform: translate3d(0, 100%, 0);
+  transition: transform .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.ReactModal__Content--after-open {
+  transform: translate3d(0, 0, 0);
+}
+
+.modal-open {
+  overflow-y: hidden;
+}
+
+.yellow, .warn { color: $yellow; }
+.red, .danger, .error { color: $red; }
+
+@media #{$mobile} {
+  #root { margin-bottom: 2.25rem; }
+}
