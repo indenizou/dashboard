@@ -1,5 +1,5 @@
 {
-  "name": "@alia-code/indenizou-dashboard",
+  "name": "@indenizou/dashboard",
   "version": "1.0.0",
   "description": "Indenizou Dashboard",
   "main": "./src/index.js",
@@ -70,5 +70,5 @@
   "bugs": {
     "url": "https://github.com/itsmelion/indenizou/issues"
   },
-  "homepage": "http://app.indenizou.alia.ml"
+  "homepage": "http://dashboard.indenizou.alia.ml"
 }
