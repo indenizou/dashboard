@@ -57,7 +57,7 @@ class EditCustomer extends PureComponent {
     const options = { cancelToken: this.signal.token };
 
     return saveCustomer(match.params.id, customer, options)
-      .then(({ id }) => h.push(`/clients/${id}`));
+      .then(() => h.push(`/cliente/${match.params.id}`));
   }
 
   changeState(key, value) {
