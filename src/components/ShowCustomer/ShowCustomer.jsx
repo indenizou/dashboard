@@ -109,7 +109,7 @@ class ShowCustomer extends PureComponent {
 
           <section className={style.files} flex="auto">
             <h3>Documentos</h3>
-            Files
+            <FileUpload customerID={customer.id} files={customer.files} />
           </section>
         </div>
       </main>

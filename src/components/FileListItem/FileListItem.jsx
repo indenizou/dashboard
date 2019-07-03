@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFileImage,
@@ -9,6 +9,8 @@ import {
   faFileArchive,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
+import { deleteFile } from 'api';
+
 import style from './FileListItem.module.scss';
 
 const selectIcon = (mimetype) => {
@@ -20,28 +22,36 @@ const selectIcon = (mimetype) => {
   return faFile;
 };
 
-const FileListItem = React.memo(({ file }) => (
-  <li className={style.wrapper} row="nowrap" mobile-wrap="" align="start center">
-    <FontAwesomeIcon className="mr1" icon={selectIcon(file.mimetype)} />
+const FileListItem = ({ customerID, file }) => {
+  const confirmDelete = () => {
+    const confirmed = confirm("Deleting: ${file.name}\nIt will be DELETED FOREVER! Are you sure? OK or Cancel.");
 
-    <div>
-      <h6>{file.name}</h6>
+    if (confirmed) deleteFile(customerID, file.id);
+  }
 
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        className="link"
-        href={`${process.env.REACT_APP_API_URL}/${file.path}`}>
-        Abrir arquivo
-      </a>
-    </div>
+  return (
+    <li className={style.wrapper} row="nowrap" mobile-wrap="" align="start center">
+      <FontAwesomeIcon className="mr1" icon={selectIcon(file.mimetype)} />
 
-    <span flex="" />
+      <div>
+        <h6>{file.name}</h6>
 
-    <button type="button" className="button red">
-      <FontAwesomeIcon icon={faTrash} />
-    </button>
-  </li>
-));
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          className="link"
+          href={`${process.env.REACT_APP_API_URL}/${file.path}`}>
+          Abrir arquivo
+        </a>
+      </div>
 
-export default FileListItem;
+      <span flex="" />
+
+      <button type="button" className="button red" onClick={confirmDelete}>
+        <FontAwesomeIcon icon={faTrash} />
+      </button>
+    </li>
+  );
+}
+
+export default memo(FileListItem);
