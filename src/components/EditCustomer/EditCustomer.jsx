@@ -1,13 +1,15 @@
 /* eslint-disable lines-between-class-members */
 import React, { PureComponent } from 'react';
 import axios from 'axios';
-import {
-  getCustomer, saveCustomer, getPipelines, deleteCustomer,
-} from 'api';
 import PhoneInput from 'react-phone-number-input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
+
+import {
+  getCustomer, saveCustomer, getPipelines, deleteCustomer,
+} from 'api';
 import FileUpload from 'components/FileUpload/FileUpload';
+
 import style from './EditCustomer.module.scss';
 
 const assuntos = [

@@ -1,10 +1,13 @@
 import React, { PureComponent } from 'react';
 import axios from 'axios';
-import { getCustomer } from 'api';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEdit, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+
+import { getCustomer } from 'api';
+import FileUpload from 'components/FileUpload/FileUpload';
+
 import style from './ShowCustomer.module.scss';
 
 class ShowCustomer extends PureComponent {
