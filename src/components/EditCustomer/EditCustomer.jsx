@@ -69,6 +69,8 @@ class EditCustomer extends PureComponent {
 
   render() {
     const { customer, pipelines } = this.state;
+    const { match } = this.props;
+
     if (!customer) return null;
 
     return (

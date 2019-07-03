@@ -29,6 +29,8 @@ class ShowCustomer extends PureComponent {
 
   render() {
     const { customer } = this.state;
+    const { match } = this.props;
+
     if (!customer) return null;
 
     return (
