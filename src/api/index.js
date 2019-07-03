@@ -54,7 +54,7 @@ export const uploadFiles = (id, fileList = [], opt) => {
     .catch(e => error('Erro no upload dos arquivos.', e));
 };
 
-export const deleteFile = (id, file, opt) => axios
-  .delete(`/customer/${id}/files/${file}`, { ...auth(), ...opt })
+export const deleteFile = (customerId, fileId, opt) => axios
+  .delete(`/customer/${customerId}/files/${fileId}`, { ...auth(), ...opt })
   .then(({ data }) => data)
-  .catch(e => error('Erro ao tentar deletar} o arquivo.', e));
+  .catch(e => error('Erro ao tentar deletar o arquivo.', e));
