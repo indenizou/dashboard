@@ -17,7 +17,7 @@ class FileUpload extends PureComponent {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { userID } = this.props;
+    const { customerID } = this.props;
     let { files } = this.fileInput.current;
 
     files = flatMap(files);
@@ -32,7 +32,7 @@ class FileUpload extends PureComponent {
       },
     };
 
-    return uploadFiles(userID, files, options)
+    return uploadFiles(customerID, files, options)
       .then(data => this.setState(({ files: data })));
   }
 
@@ -57,7 +57,9 @@ class FileUpload extends PureComponent {
 
   render() {
     const { files, progress } = this.state;
+    const { customerID } = this.props;
     const isLoading = progress && progress < 100;
+
     return (
       <div className={style.container}>
         <form className="mv2" onSubmit={this.handleSubmit}>
@@ -81,7 +83,7 @@ class FileUpload extends PureComponent {
         </form>
 
         <section className={style.filesList}>
-          {!!files.length && files.map(file => <FileListItem key={file.id} file={file} />)}
+          {!!files.length && files.map(file => <FileListItem key={file.id} customerID={customerID} file={file} />)}
         </section>
       </div>
     );
