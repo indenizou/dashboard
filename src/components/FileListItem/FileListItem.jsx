@@ -25,7 +25,7 @@ const selectIcon = (mimetype) => {
 const FileListItem = ({ customerID, file }) => {
   const confirmDelete = () => {
     // eslint-disable-next-line no-restricted-globals
-    const confirmed = confirm("Deleting: ${file.name}\nIt will be DELETED FOREVER! Are you sure? OK or Cancel.");
+    const confirmed = confirm(`Deleting: ${file.name}\nIt will be DELETED FOREVER! Are you sure? OK or Cancel.`);
 
     if (confirmed) deleteFile(customerID, file.id);
   }
