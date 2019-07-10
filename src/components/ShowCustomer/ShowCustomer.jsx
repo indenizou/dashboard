@@ -10,6 +10,8 @@ import FileUpload from 'components/FileUpload/FileUpload';
 
 import style from './ShowCustomer.module.scss';
 
+const parseDate = date => new Date(date).toLocaleDateString();
+
 class ShowCustomer extends PureComponent {
   state = { customer: null };
 
@@ -52,6 +54,18 @@ class ShowCustomer extends PureComponent {
                 <div className={style.outros}>
                   <h3>{customer.assunto}</h3>
                   {customer.outros && <p>{customer.outros}</p>}
+                </div>
+              </div>
+
+              <div className="mv1 row nowrap">
+                <div flex="auto">
+                  <h6>Inscrito em:</h6>
+                  <p>{parseDate(customer.createdAt)}</p>
+                </div>
+
+                <div flex="auto">
+                  <h6>Modificado em:</h6>
+                  <p>{parseDate(customer.updatedAt)}</p>
                 </div>
               </div>
 
