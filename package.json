@@ -46,7 +46,7 @@
   },
   "optionalDependencies": {
     "eslint-config-airbnb": "18.0.1",
-    "stylelint": "^11.1.1",
+    "stylelint": "^13.0.0",
     "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-scss": "^3.11.1",
     "typescript": "^3.6.4"
