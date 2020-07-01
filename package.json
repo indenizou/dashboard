@@ -45,7 +45,7 @@
     "postcss-preset-env": "6.7.0"
   },
   "optionalDependencies": {
-    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-airbnb": "18.2.0",
     "stylelint": "^13.0.0",
     "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-scss": "^3.11.1",
