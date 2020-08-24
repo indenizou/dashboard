@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "commitBody": "[skip netlify]",
+  "packageRules": [
+    {
+      "updateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
+}
