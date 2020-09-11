@@ -3,6 +3,7 @@
     "config:base"
   ],
   "commitBody": "[skip netlify]",
+  "requiredStatusChecks": null,
   "packageRules": [
     {
       "updateTypes": ["major", "minor", "patch", "pin", "digest"],
